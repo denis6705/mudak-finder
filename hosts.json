@@ -1,0 +1,9 @@
+[
+	{"ip" : "172.16.0.1", 		"name" : "core",        "type" : "huawei"},
+	{"ip" : "172.16.13.199", 	"name" : "eltex",       "type" : "eltex"},
+	{"ip" : "172.20.255.253", 	"name" : "core2",       "type" : "huawei"},
+	{"ip" : "172.16.1.91",      "name" : "ящик на 3ем", "type" : "huawei"},
+	{"ip" : "172.16.10.151",    "name" : "бухгалтерия", "type" : "huawei"},
+	{"ip" : "172.16.6.222",     "name" : "дирекция",    "type" : "huawei"},
+	{"ip" : "10.11.11.23",      "name" : "аюдаг",       "type" : "huawei"}
+]
