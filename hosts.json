@@ -1,9 +1,9 @@
 [
-	{"ip" : "172.16.0.1", 		"name" : "core",        "type" : "huawei"},
-	{"ip" : "172.16.13.199", 	"name" : "eltex",       "type" : "eltex"},
-	{"ip" : "172.20.255.253", 	"name" : "core2",       "type" : "huawei"},
-	{"ip" : "172.16.1.91",      "name" : "ящик на 3ем", "type" : "huawei"},
-	{"ip" : "172.16.10.151",    "name" : "бухгалтерия", "type" : "huawei"},
-	{"ip" : "172.16.6.222",     "name" : "дирекция",    "type" : "huawei"},
-	{"ip" : "10.11.11.23",      "name" : "аюдаг",       "type" : "huawei"}
+	{"ip" : "172.16.0.1", 		"name" : "core",        "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},
+	{"ip" : "172.16.13.199", 	"name" : "eltex",       "device_type" : "eltex",  "username" : "root", "password" : "T$2z-artek", "uplink" : "Po1"},
+	{"ip" : "172.20.255.253", 	"name" : "core2",       "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "Eth-Trunk1"},
+	{"ip" : "172.16.1.91",      "name" : "ящик на 3ем", "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},
+	{"ip" : "172.16.10.151",    "name" : "бухгалтерия", "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},
+	{"ip" : "172.16.6.222",     "name" : "дирекция",    "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},
+	{"ip" : "10.11.11.23",      "name" : "аюдаг",       "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "GE0/0/28"}
 ]
