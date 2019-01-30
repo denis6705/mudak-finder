@@ -6,26 +6,7 @@ from pprint import pprint as pp
 
 hosts = json.load(open("hosts.json", encoding="utf-8"))
 
-#host = "172.16.0.1"
-#user = "root"
-#password = "T$2z-artek"
-"""
-tn = telnetlib.Telnet("172.16.0.1")
-tn.write(b"root\n")
-sleep(0.2)
-tn.write(b"T$2z-artek\n")
-sleep(0.2)
-tn.write(b"display mac-address 908d-7897-65c3\n")
-sleep(0.2)
-#tn.write(b"show mac address-table address 24:bc:f8:62:90:30\n")
-sleep(1)
-s = str(tn.read_very_eager())
-pp(s)
-match1 = re.search(r'displayed = 0',str(s))
-match2 = re.search(r'Eth-Trunk2', str(s))
-print(bool(match1))
-print(bool(match2))
-"""
+
 def convert_mac(m):
     if m[4] == '-':
         return m[0:2] + ":" + m[2:4] + ":" + m[5:7] + ":" + m[7:9] + ":" + m[10:12] + ":" + m[12:14]
@@ -53,11 +34,9 @@ def mudak_tut(host,mac):
         s = str(tn.read_very_eager())
         match1 = re.search(r'displayed = 0',str(s))
         match2 = re.search(r'{}'.format(host['uplink']), str(s))
-        if match1: return False
-        elif not match2:
+        if not match1 and not match2:
             print()
-            print(s.split('/-')[1].split('--')[0])
-            print()
+            print(re.sub(r'\s+', ' | ',s.split('\\r\\n')[-5]))
             return True
         else: return False
     else:
@@ -75,8 +54,7 @@ def mudak_tut(host,mac):
         match2 = re.search(r'{}'.format(host['uplink']), str(s))
         if match1 and (not match2):
             print()
-            print(s.split('\\r\\n')[10])
-            print()
+            print(re.sub(r'\s+', ' | ',s.split('\\r\\n')[10]))
             return True
         else: return False
 
