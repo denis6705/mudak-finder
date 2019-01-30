@@ -1,6 +1,6 @@
 [
 	{"ip" : "172.16.0.1", 		"name" : "core",        "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},
-	{"ip" : "172.16.13.199", 	"name" : "eltex",       "device_type" : "eltex",  "username" : "root", "password" : "T$2z-artek", "uplink" : "Po1"},
+	{"ip" : "10.11.12.170", 	"name" : "eltex",       "device_type" : "eltex",  "username" : "root", "password" : "T$2z-artek", "uplink" : "Po1"},
 	{"ip" : "172.20.255.253", 	"name" : "core2",       "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "Eth-Trunk1"},
 	{"ip" : "172.16.1.91",      "name" : "ящик на 3ем", "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},
 	{"ip" : "172.16.10.151",    "name" : "бухгалтерия", "device_type" : "huawei", "username" : "root", "password" : "T$2z-artek", "uplink" : "XGE0/0/1"},

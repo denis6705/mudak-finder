@@ -54,7 +54,11 @@ def mudak_tut(host,mac):
         match1 = re.search(r'displayed = 0',str(s))
         match2 = re.search(r'{}'.format(host['uplink']), str(s))
         if match1: return False
-        elif match2: return True
+        elif not match2:
+            print()
+            print(s.split('/-')[1].split('--')[0])
+            print()
+            return True
         else: return False
     else:
         if mac[2] == ':':
@@ -69,16 +73,22 @@ def mudak_tut(host,mac):
         s = str(tn.read_very_eager())
         match1 = re.search(r'dynamic',str(s))
         match2 = re.search(r'{}'.format(host['uplink']), str(s))
-        if match1 and (not match2): return True
+        if match1 and (not match2):
+            print()
+            print(s.split('\\r\\n')[10])
+            print()
+            return True
         else: return False
 
 def naiti_ego(hosts, mac):
     for host in hosts:
         print("Proverka " + host["name"], end='')
         if mudak_tut(host, mac):
-            print("   !!! Mudak " + mac + " tut: " + host["name"])
-            break
-        print('      --     OK')
+            pass
+        print("")
     return
 
-naiti_ego(hosts, '74d0-2b2c-b2be')
+try:
+    naiti_ego(hosts, '7c:b0:c2:83:0e:e6')
+except:
+    pass
