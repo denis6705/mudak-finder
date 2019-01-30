@@ -39,7 +39,7 @@ def mudak_tut(host,mac):
             print(re.sub(r'\s+', ' | ',s.split('\\r\\n')[-5]))
             return True
         else: return False
-    else:
+    elif device_type == "eltex":
         if mac[2] == ':':
             pass
         else:
@@ -57,16 +57,21 @@ def mudak_tut(host,mac):
             print(re.sub(r'\s+', ' | ',s.split('\\r\\n')[10]))
             return True
         else: return False
-
+    else:
+        print("Error: device-type " + device_type + " not supported!")
+        return False
+    
 def naiti_ego(hosts, mac):
     for host in hosts:
         print("Proverka " + host["name"], end='')
-        if mudak_tut(host, mac):
-            pass
-        print("")
+        try:
+            if mudak_tut(host, mac):
+                pass
+            print("")
+        except:
+            print(" -> !!! Can't connect to " + host["name"])
     return
 
-try:
-    naiti_ego(hosts, '7c:b0:c2:83:0e:e6')
-except:
-    pass
+
+naiti_ego(hosts, '7c:b0:c2:83:0e:e6')
+
