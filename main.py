@@ -1,10 +1,12 @@
+
 import telnetlib
 from time import sleep
 import json
 import re
 from pprint import pprint as pp
+import sys
 
-hosts = json.load(open("hosts.json", encoding="utf-8"))
+
 
 
 def convert_mac(m):
@@ -73,5 +75,30 @@ def naiti_ego(hosts, mac):
     return
 
 
-naiti_ego(hosts, '7c:b0:c2:83:0e:e6')
+#naiti_ego(hosts, '7c:b0:c2:83:0e:e6')
+
+def usage():
+    print(
+"""
+Usage
+        mf [mac-addr]
+Example
+        mf 7c:b0:c2:83:0e:e6
+""")
+
+def main():
+    if len(sys.argv) > 1:
+        try:
+            hosts = json.load(open("hosts.json", encoding="utf-8"))
+        except:
+            print("Error: can't open file hosts.json")
+            sys.exit(1)
+
+        naiti_ego(hosts, sys.argv[1])
+    else:
+        usage()
+
+if __name__ == "__main__":
+    main()
+    
 
